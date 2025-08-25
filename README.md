@@ -1,4 +1,10 @@
-# 🌍 Welcome to my repository — The best hacking website! 
+# 🌍 Welcome to my repository — The best hacking website!  
+
+[![GitHub followers](https://img.shields.io/github/followers/guzesqdro?label=Follow%20me%20on%20GitHub&style=social)](https://github.com/guzesqdro)  
+[![Instagram](https://img.shields.io/badge/Instagram-%40guzesqdro-E4405F?logo=instagram&logoColor=white)](https://instagram.com/guzesqdro)  
+[![Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.com/invite/h5YfEjbuqJ)  
+
+---
 
 👨‍💻 On my GitHub (👉 [guzesqdro.github.io](https://guzesqdro.github.io)) you’ll find:  
 - 📱 Modified **.ipa apps** for iOS  
@@ -28,4 +34,3 @@ Everything I post comes from hours of curiosity, testing, and experimenting, so 
 
 👉 Follow along if you’re into tech, mods, and open knowledge.  
 Let’s make something awesome together 🚀
-
