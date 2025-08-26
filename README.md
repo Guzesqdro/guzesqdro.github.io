@@ -1,4 +1,4 @@
-# 🌍 Welcome to my repository — The best hacking website!  
+# 🌍 Welcome to my GitHub — The best apps are wating for you!  
 
 [![GitHub followers](https://img.shields.io/github/followers/guzesqdro?label=Follow%20me%20on%20GitHub&style=social)](https://github.com/guzesqdro)  
 [![Instagram](https://img.shields.io/badge/Instagram-%40guzesqdro-E4405F?logo=instagram&logoColor=white)](https://instagram.com/guzesqdro)  
@@ -7,11 +7,10 @@
 ---
 
 👨‍💻 On my GitHub (👉 [guzesqdro.github.io](https://guzesqdro.github.io)) you’ll find:  
-- 📱 Modified **.ipa apps** for iOS  
-- 🤖 Modded **Android apps**  
-- 🍏 Tweaked **Mac apps**  
-- 💻 Customized **Windows software**  
-- 🎁 Always **free & open for everyone**  
+- 📱 An Archive for old repositories of Cydia, Zebra and Sileo!
+- 🍏 My own apps for Mac that every user needs!  
+- 💻 Creating apps for others!
+- 🎁 Always **free & open for everyone!**  
 
 📦 Also hosting a full **repository for Sileo, Cydia, and Zebra**, so you can install my tweaks and apps easily!  
 
@@ -33,4 +32,4 @@ Everything I post comes from hours of curiosity, testing, and experimenting, so 
 💬 If you need an app that is not listed PLEASE contact me via IG and tell me the app that you want  
 
 👉 Follow along if you’re into tech, mods, and open knowledge.  
-Let’s make something awesome together 🚀
+Let’s make something awesome **together** 🚀
