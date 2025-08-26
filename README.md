@@ -7,9 +7,9 @@
 ---
 
 👨‍💻 On my GitHub (👉 [guzesqdro.github.io](https://guzesqdro.github.io)) you’ll find:  
-- 📱 An Archive for old repositories of Cydia, Zebra and Sileo!
-- 🍏 My own apps for Mac that every user needs!  
-- 💻 Creating apps for others!
+- 📱 An Archive for **old repositories** of Cydia, Zebra and Sileo!
+- 🍏 My own apps for Mac that **every user needs!**
+- 💻 Creating **apps for others!**
 - 🎁 Always **free & open for everyone!**  
 
 📦 Also hosting a full **repository for Sileo, Cydia, and Zebra**, so you can install my tweaks and apps easily!  
