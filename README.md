@@ -31,9 +31,5 @@ Everything I post comes from hours of curiosity, testing, and experimenting, so 
 
 💬 If you need an app that is not listed PLEASE contact me via IG and tell me the app that you want
 
-🗂️ Here is the projects that I made until today:
-
-- 🍅 [**Tomato 1.3**](https://instagram.com/guzesqdro)
-
 👉 Follow along if you’re into tech, mods, and open knowledge.  
 Let’s make something awesome **together** 🚀
