@@ -1,1564 +1,1007 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>guzesqdro.github.io The future of modifications 🥳</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/phosphor.js"></script>
+    <title>Guzesqdro's 💻🧪</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;70s0&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0c10;
-            color: #c9d1d9;
-            overflow-x: hidden;
-            /* Futuristic background with particles */
-            background-image: radial-gradient(circle at 10% 20%, rgba(30, 40, 60, 0.4), rgba(0, 0, 0, 0.8)), linear-gradient(135deg, rgba(15, 20, 30, 0.8), rgba(0, 0, 0, 0.8));
-            background-attachment: fixed;
-            position: relative;
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        /* Particle effect */
-        body::before {
-            content: '';
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e);
+            color: #e6e6e6;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(circle, #0ea5e9 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.1;
-            z-index: -1;
-            animation: move-bg 60s linear infinite;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1.5s ease-out;
         }
-        @keyframes move-bg {
-            from {
-                background-position: 0 0;
+        .hello-text {
+            font-size: 5rem;
+            font-family: 'Dancing Script', cursive;
+            color: #00ff88;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: helloAnimation 3s forwards;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+        }
+        @keyframes helloAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-15deg);
+                text-shadow: 0 0 30px rgba(0, 255, 136, 0);
             }
-            to {
-                background-position: 100% 100%;
+            30% {
+                opacity: 1;
+                transform: scale(1.2) rotate(5deg);
+                text-shadow: 0 0 40px rgba(0, 255, 136, 0.8);
+            }
+            70% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+                text-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                text-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
             }
         }
-        .card-futuristic {
-            background-color: rgba(22, 27, 34, 0.6);
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
+            background: rgba(15, 15, 35, 0.7);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(48, 54, 61, 0.5);
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transform-style: preserve-3d;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 1.5s ease-out;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+            border: 1px solid rgba(0, 255, 136, 0.3);
         }
-        .card-futuristic:hover {
-            transform: translateY(-8px) scale(1.03) translateZ(10px);
-            border-color: #0ea5e9;
-            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+        .container.show {
+            opacity: 1;
+            transform: scale(1);
         }
-        .button-futuristic {
-            background-color: #1a222c;
-            border: 1px solid #30363d;
-            transition: all 0.3s ease-in-out;
-            color: #0ea5e9;
-            box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+        .header {
+            background: rgba(10, 10, 20, 0.9);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00ff88;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span {
+            background: linear-gradient(45deg, #00ff88, #00cc66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-item {
+            color: #e6e6e6;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+        .nav-item:hover {
+            color: #00ff88;
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ff88;
+            transition: width 0.3s ease;
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        .search-container {
+            position: relative;
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .search-icon {
+            color: #e6e6e6;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .search-icon:hover {
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+        }
+        .search-input {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0.5rem 0.8rem;
+            width: 0;
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 20px;
+            color: #e6e6e6;
+            font-family: inherit;
+            transition: width 0.3s ease, padding 0.3s ease;
+            opacity: 0;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .search-input.active {
+            width: 200px;
+            padding: 0.5rem 0.8rem;
+            opacity: 1;
+        }
+        .content {
+            padding: 2rem;
+            height: calc(100% - 120px);
+            overflow-y: auto;
+        }
+        section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #00ff88;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #00ff88, transparent);
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+        .skill {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #00ff88;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
+            background: rgba(20, 20, 40, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.1);
+            border-color: rgba(0, 255, 136, 0.5);
+        }
+        .project-img {
+            height: 180px;
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+        }
+        .project-content {
+            padding: 1.5rem;
+        }
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #00ff88;
+        }
+        .project-desc {
+            color: #b8b8b8;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+        .tag {
+            background: rgba(0, 255, 136, 0.1);
+            color: #00ff88;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .project-link {
+            color: #00ff88;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+        .project-link:hover {
+            color: #00cc66;
+            text-decoration: underline;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(20, 20, 40, 0.6);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #00ff88;
+            font-weight: 500;
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            background: rgba(10, 10, 20, 0.5);
+            border-radius: 8px;
+            color: #e6e6e6;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+        }
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            background: linear-gradient(45deg, #00ff88, #00cc66);
+            color: #000;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 auto;
         }
-        .button-futuristic:hover {
-            background-color: #212a36;
-            border-color: #0ea5e9;
-            box-shadow: 0 0 25px rgba(14, 165, 233, 0.6);
-            color: white;
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
         }
-        .glow-text {
-            text-shadow: 0 0 10px rgba(14, 165, 233, 0.8);
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
-        .app-icon {
-            border-radius: 25%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: #00ff88;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
-        /* Parallax effect classes */
-        .parallax-effect {
-            will-change: transform;
-            transition: transform 0.1s ease-out;
+        .social-link:hover {
+            background: rgba(0, 255, 136, 0.3);
+            transform: translateY(-5px);
         }
-        /* Style for pages/sections */
-        .page {
-            display: none; /* Oculta todas las páginas por defecto */
+        .emoji {
+            display: inline-block;
+            font-size: 1.2em;
+            margin: 0 5px;
         }
-        .page.active {
-            display: block; /* Muestra la página activa */
+        .floating-emoji {
+            position: absolute;
+            opacity: 0.7;
+            z-index: -1;
+            animation: float 6s infinite ease-in-out;
         }
-        .category-button {
-            transition: all 0.3s ease-in-out;
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
         }
-        .category-button:hover {
-            background-color: rgba(22, 27, 34, 0.8);
-        }
-        .category-button.active {
-            border: 1px solid #0ea5e9;
-            background-color: rgba(14, 165, 233, 0.2);
-            color: white;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hello-text {
+                font-size: 3.5rem;
+            }
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .search-container {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gradient-futuristic">
-
-    <!-- Header, Navigation and Search Bar -->
-    <header class="container mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center z-20 relative">
-        <div class="flex items-center space-x-12 mb-4 md:mb-0">
-            <div class="text-4xl font-bold glow-text">
-                Guzesqdro.Github.Io
+<body>
+    <div class="loading-container">
+        <div class="hello-text">Hello! 💻🧪</div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <span>Guzesqdro</span> 💻🧪
             </div>
-            <!-- Navigation Menu -->
-            <nav class="flex space-x-4">
-                <a href="#" onclick="showPage('home-page')" class="text-[#8b949e] hover:text-white transition-colors">Home</a>
-                <a href="#" onclick="showPage('about-us-page')" class="text-[#8b949e] hover:text-white transition-colors">About Us</a>
-                <a href="#" onclick="showPage('repo-page')" class="text-[#8b949e] hover:text-white transition-colors">Repository</a>
-             <a href="#" onclick="showPage('instalation-page')" class="text-[#8b949e] hover:text-white transition-colors">Instalation</a>
+            <nav class="nav">
+                <a href="#about" class="nav-item">About 🧑‍💻</a>
+                <a href="#projects" class="nav-item">Projects 🛠️</a>
+                <a href="#pirate" class="nav-item">Pirate 🏴‍☠️</a>
+                <a href="#os" class="nav-item">OS 🖥️</a>
+                <a href="#contact" class="nav-item">Contact 📬</a>
+                <div class="search-container">
+                    <span class="search-icon"> </span>
+                    <input type="text" class="search-input" placeholder="Search...">
+                </div>
             </nav>
         </div>
-        <div class="w-full md:w-1/2 relative">
-            <input id="search-input" type="text" placeholder="Search for apps..." class="w-full p-3 pl-10 rounded-full bg-[#161b22] border border-[#30363d] focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]">
-            <i class="ph-bold ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-[#0ea5e9]"></i>
+        <div class="content">
+            <section id="about" class="about-section">
+                <h2 class="section-title">About Me 🌟</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                          Hello! I'm <strong>Guzesqdro</strong>, Hey! I’m guzesqdro — the mind behind this project.
+                          After 4 months of non-stop planning, testing, and hacking, I launched this platform to bring
+                          together everything I’ve learned, built, and tweaked — all in one place. 🚀
+                        </p>
+                        <h2>💡 What’s the goal?</h2>
+                        <p>
+                          To create a real tech community, where knowledge is shared freely and curiosity is the driving force.
+                          I believe that everyone should have access to powerful tools, apps, and ideas — no paywalls, no BS.
+                        </p>
+                        <h2>🔧 What do I do?</h2>
+                        <p>A bit of everything, for everyone:</p>
+                        <ul>
+                          <li>📱 An Archive for old repositories of Cydia, Zebra and Sileo!</li>
+                          <li>🍏 My own apps for Mac that every user needs!</li>
+                          <li>💻 Creating apps for others!</li>
+                          <li>🎁 Always FREE</li>
+                        </ul>
+                        <p>Everything here is tested, clean, and ad-free. 🧼</p>
+                        <h2>🧠 Why?</h2>
+                        <p>
+                          Because I love learning, breaking things, fixing them better — and helping others skip the struggle.
+                          If you're into tech, mods, and open-source vibes, you're in the right place. 🤝
+                        </p>
+                        <h2>💸 Donate?</h2>
+                        <p>
+                            Hey, if you want to "donate" me a happy face just follow me on IG 🥳
+                            <a href="https://instagram.com/guzesqdro" target="_blank">Donate for free 🥳</a>
+                        </p>
+                        <h2>⚠️ Important</h2>
+                        <p>
+                          All content is shared for educational purposes only.
+                          I do not support illegal use of any software or content.
+                          Delete between 24h!
+                        </p>
+                        <h2>🚨 How to search?</h2>
+                        <p>
+                            Click in your keyboard this combination:
+                            Mac:  <code>Cmd + F</code> | Windows: <code>Ctrl + F</code> | Linux: <code>Ctrl + F</code><br>
+                            Type keywords like "AI", "Mac", or "iOS" to find projects and apps quickly.
+                        </p>
+                        <h2>📲 Contact</h2>
+                        <p>
+                          Want something added or missing a specific app?<br>
+                          DM me on Instagram: <a href="https://instagram.com/guzesqdro" target="_blank">@guzesqdro</a>
+                        </p>
+                        <p>Let’s build something awesome together.</p>
+                        <p>– guzesqdro 💻🧪</p>
+                        <div class="skills">
+                            <span class="skill">💻 JavaScript</span>
+                            <span class="skill">🎨 React</span>
+                            <span class="skill">📱 Mobile Dev</span>
+                            <span class="skill">☁️ Cloud</span>
+                            <span class="skill">🔧 Node.js</span>
+                            <span class="skill">📊 Data</span>
+                        </div>
+                    </div>
+                </div>
+              </section>    
+            <section id="projects" class="projects-section">
+                <h2 class="section-title">My Projects 🚀</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">🐳</div>
+                        <div class="project-content">
+                            <h3 class="project-title">DeepSeek Mac</h3>
+                            <p class="project-desc">Chinese powerhouse with a coding fetish 💻 and a soft spot for Spanish 🇪🇸. Fast, smart, and flying slightly under the radar.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">Web3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Guzesqdro/DeepSeek-AI-Mac/releases/tag/1.0" class="project-link">GitHub 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🌟</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Gemini Mac</h3>
+                            <p class="project-desc">Google’s slick AI with Google Lens in one pocket 📸 and the entire internet in the other 📚. Thinks in text, images, and vibes 🎨🔊.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">Web3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">(In development 🗂️)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🌐</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Qwen Mac</h3>
+                            <p class="project-desc">Alibaba’s golden child 👑. Writes essays, drops code, and speaks 10 languages like it’s nothing 🌍💬. Basically the overachiever of the East 🏯✨</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">Web3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Guzesqdro/Qwen-AI-Mac/releases/tag/1.0" class="project-link">GitHub 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">☁️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Claude Mac</h3>
+                            <p class="project-desc">Polite, deep-thinking, and weirdly ethical 🫡. Reads novels in one go 📖⚡ and answers like your smartest friend who never brags. Anthropic’s pride & joy 💖</p>
+                            <div class="project-tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">Web3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Guzesqdro/Claude-AI-Mac/releases/tag/1.0" class="project-link">GitHub 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🛰️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Grok Mac</h3>
+                            <p class="project-desc">Elon’s rebellious AI from X (Twitter’s basement) 🐦💣. Sarcastic, spicy, and always up for chaos 🔥. Answers with attitude and real-time drama from the feed 📰😈</p>
+                            <div class="project-tags">
+                                <span class="tag">D3.js</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">Web3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Guzesqdro/Grok-AI-Mac/releases/tag/1.0" class="project-link">GitHub 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🍅</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Tomato 3.1</h3>
+                            <p class="project-desc">Just a normal tomato without paywalls 💰, and full of emojies 🥳.</p>
+                            <div class="project-tags">
+                                <span class="tag">Tomato</span>
+                                <span class="tag">Focus</span>
+                                <span class="tag">Swift Playgrounds</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Guzesqdro/Tomato/releases/tag/3.1" class="project-link">GitHub 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                        <section id="pirate" class="pirate-section">
+                <h2 class="section-title">Pirate Zone 🏴‍☠️</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">🏴‍☠️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Cydia Repository</h3>
+                            <p class="project-desc">Archive of classic Cydia tweaks and packages from the golden era of iOS jailbreaking. All for educational purposes and historical preservation.</p>
+                            <div class="project-tags">
+                                <span class="tag">iOS</span>
+                                <span class="tag">Jailbreak</span>
+                                <span class="tag">Cydia</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Access Repository 🌐</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">📡</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Signal Pirate Radio</h3>
+                            <p class="project-desc">Experimental communication platform for the tech underground. Broadcast your projects and discoveries to fellow enthusiasts around the world.</p>
+                            <div class="project-tags">
+                                <span class="tag">Communication</span>
+                                <span class="tag">Network</span>
+                                <span class="tag">Experimental</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Tune In 📻</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="os" class="os-section">
+                <h2 class="section-title">Operating Systems 🖥️</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">🌊🏔️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 16 Tahoe (2025)</h3>
+                            <p class="project-desc">Brought Liquid Glass icons 💎✨ with a translucent, modern look, a refreshed Finder 🗂️, improved folder personalization 🎨, and smoother, more polished UI interactions 🖱️💨.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://swcdn.apple.com/content/downloads/20/43/093-26142-A_ET38WRHE7O/1c6szqmnvpaw2nf23ucos9xjwxtaa8io2s/InstallAssistant.pkg" class="project-link">Download 💻</a>
+                                <a href="https://updates.cdn-apple.com/2025SummerSeed/fullrestores/093-26148/FDF54F82-98DF-4285-A0DB-CB30F4F93C71/UniversalMac_26.0_25A5349a_Restore.ipsw" class="project-link">IPSW 🌈</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🌲🪵</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 15 Sequoia (2024)</h3>
+                            <p class="project-desc">Introduced iPhone Mirroring 📱➡️💻 to control your iPhone directly from Mac, plus a dedicated Passwords app 🔑🛡️ for safer account management.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://swcdn.apple.com/content/downloads/26/59/093-10756-A_RD5LVY0R3G/7a96asv0xoamt1fk0xxnqy8jffdyauooaq/InstallAssistant.pkg" class="project-link">Download 💻</a>
+                                <a href="https://updates.cdn-apple.com/2025SummerFCS/fullrestores/093-10809/CFD6DD38-DAF0-40DA-854F-31AAD1294C6F/UniversalMac_15.6.1_24G90_Restore.ipsw" class="project-link">IPSW 🌈</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🍇🍷</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 14 Sonoma (2023)</h3>
+                            <p class="project-desc">Added interactive widgets 🧩 on the desktop, improved gaming performance 🎮🔥, and gave new options for multitasking and customization 🖥️💡.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://swcdn.apple.com/content/downloads/03/49/082-85709-A_OVYS4G5L94/y1wfe9zpaqu9mjnl3zjtq41n0qtb21kvcs/InstallAssistant.pkg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🌬️🌴</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 13 Ventura (2022)</h3>
+                            <p class="project-desc">Introduced Stage Manager 🪟📂 for organizing windows efficiently, and Continuity Camera 📷 to use your iPhone as a webcam, plus small productivity boosts ✨.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://swcdn.apple.com/content/downloads/12/28/082-87267-A_WGJHPIPC6Q/e982ujmntb0d6l44kjd20dc5thmk1ynorw/InstallAssistant.pkg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🌉🌊</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 12 Monterey (2021)</h3>
+                            <p class="project-desc">Added Universal Control 🖱️⌨️ to seamlessly move your mouse and keyboard between Mac and iPad, plus Shortcuts ⚡ to automate tasks easily.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://swcdn.apple.com/content/downloads/20/06/062-34032-A_4NQKPP7NYJ/rdsbqare86atoqg2lubskvr5tab2b49fsf/InstallAssistant.pkg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🌊🏞️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 11 Big Sur (2020)</h3>
+                            <p class="project-desc">Brought a huge visual redesign 🎨 with rounded corners 🔵, fresh icons 🟠🟢🔷, and marked the jump to macOS 11 🚀. Everything looked lighter, modern, and more colorful 🌈.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="http://swcdn.apple.com/content/downloads/14/38/042-45246-A_NLFOFLCJFZ/jk992zbv98sdzz3rgc7mrccjl3l22ruk1c/InstallAssistant.pkg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🏝️🍷</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 10.15 Catalina (2019)</h3>
+                            <p class="project-desc">Said goodbye to iTunes 🎵❌ and split it into Music 🎶, TV 📺, and Podcasts 🎙️ apps. Also added Sidecar 🖥️➡️📱 to extend your Mac screen to an iPad.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://download2389.mediafire.com/j5jwffpnjdygMsUDpjN1fSZRh2bW9XQLGMGFH18zb4LijWMHNZZ7B48eRXOx1wVJQtcuxIVhN2beXGb0hJoxlhFFa4XEOrN_v6Swf-g8v7LbTh_rct4N7u2GbfKY46y4w7jrUyFg03SzZ08fOp91feTSiikE4VgPr2wqQu99TxSGWQ/3buyokfsw4wc7yg/macOS+Catalina+10.15.7+MAS+%5B19H2%5D.dmg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🌵🏜️🌙</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 10.14 Mojave (2018)</h3>
+                            <p class="project-desc">Introduced Dark Mode 🌌 for the whole system, plus dynamic wallpapers 🖼️ that change with time of day 🌞🌜, making the Mac feel more alive and immersive.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://download2390.mediafire.com/41vy0kq5cboghswfAX2T-HUonhWG0cIR5MltI7TywCSZPZhSoeOFeI5pReFr0chpGxc2s5b-DsfaEfKiTnfWEhzeEcuuqkvyVjMD3NvUXcuI22T9HfY21NKawS7nO2EPWkrprjgxWUiYkOEAUE1Pyo4ljkg3StSeyCZPcBa-cYWpRA/bdmxmknetqit6s2/macOS+Mojave+10.14.6+%2818G103%29.dmg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🏔️🔼</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 10.13 High Sierra (2017)</h3>
+                            <p class="project-desc">Focused on under-the-hood improvements ⚙️🚀, including the new Apple File System (APFS) 💾✨, enhanced graphics and Metal 2 🎨🎮, and better VR and video support 🎥</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://archive.org/download/macos-sierra-10.12.6-iso/Install-macOS-Sierra-10.12.6_16G29.iso" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🏔️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 10.12 Sierra (2016)</h3>
+                            <p class="project-desc">Introduced Siri on Mac 🗣️💻, added Optimized Storage 🗂️⚡, and improved Continuity features 📱➡️💻 for smoother workflow and easier file management.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://archive.org/download/macos-sierra-10.12.6-iso/Install-macOS-Sierra-10.12.6_16G29.iso" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🗻</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 10.11 El Capitan (2015)</h3>
+                            <p class="project-desc">Focused on performance improvements 🚀, added Split View 🪟🪟 for multitasking, and refined Mission Control 🪟✨ for better window management.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="http://updates-http.cdn-apple.com/2019/cert/061-41424-20191024-218af9ec-cf50-4516-9011-228c78eda3d2/InstallMacOSX.dmg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🏞️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 10.10 Yosemite (2014)</h3>
+                            <p class="project-desc">Complete visual overhaul 🎨 with translucent elements 💎, iOS-style flat design, and improved Continuity 📱💻 between Mac and iOS devices.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="http://updates-http.cdn-apple.com/2019/cert/061-41343-20191023-02465f92-3ab5-4c92-bfe2-b725447a070d/InstallMacOSX.dmg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🦁⛰️</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 10.8 Mountain Lion (2012)</h3>
+                            <p class="project-desc">Added iCloud integration ☁️📂, Notification Center 🔔, Messages app 💬, and many iOS-inspired features 📱➡️💻.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://updates.cdn-apple.com/2021/macos/031-0627-20210614-90D11F33-1A65-42DD-BBEA-E1D9F43A6B3F/InstallMacOSX.dmg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">🦁</div>
+                        <div class="project-content">
+                            <h3 class="project-title">macOS 10.7 Lion (2011)</h3>
+                            <p class="project-desc">Introduced Mission Control 🪟✨, full-screen apps 📐, Launchpad 🚀, and gestures for multi-touch trackpad 🖱️.</p>
+                            <div class="project-tags">
+                                <span class="tag">.DMG</span>
+                                <span class="tag">.ISO</span>
+                                <span class="tag">Apple</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://updates.cdn-apple.com/2021/macos/041-7683-20210614-E610947E-C7CE-46EB-8860-D26D71F0D3EA/InstallMacOSX.dmg" class="project-link">Download 💻</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact-section">
+                <h2 class="section-title">Get In Touch 📬</h2>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label">Name 🧑‍💼</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email 📧</label>
+                            <input type="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Subject 📌</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message 💬</label>
+                            <textarea class="form-input form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message 🚀</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="https://github.com/guzesqdro" class="social-link" target="_blank">🐱</a>
+                        <a href="https://www.snapchat.com/add/guzesqdro" class="social-link">👻</a>
+                        <a href="https://www.instagram.com/guzesqdro" class="social-link">📸</a>
+                        <a href="https://www.tiktok.com/@guzesqdro" class="social-link">🎶</a>
+                        <a href="https://www.threads.net/@guzesqdro" class="social-link">🧵</a>
+                        <a href="https://linktr.ee/guzesqdro" class="social-link">🌳</a>
+                        <a href="https://t.me/guzesqdro" class="social-link" target="_blank">✈️</a>
+                    </div>
+                </div>
+            </section>
         </div>
-    </header>
-
-    <!-- HOME PAGE -->
-    <div id="home-page" class="page active">
-        <!-- Hero Section with Title and Subtitle -->
-        <section id="hero" class="text-center py-20 px-4">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-white glow-text mb-4">
-                The future of mods is here 🥳
-            </h1>
-            <p class="text-lg md:text-xl text-[#8b949e] max-w-2xl mx-auto mb-8">
-                Discover and download the best apps and games, with the freedom only Guzesqdro.Github.Io offers.
-                We are 100% ad-free!
-            </p>
-            <!-- Instagram Button -->
-<a class="futuristic-btn" href="https://instagram.com/guzesqdro" target="_blank">Instagram</a>
-
-<!-- GitHub Button -->
-<a class="futuristic-btn" href="https://github.com/guzesqdro" target="_blank">GitHub</a>
-
-<style>
-.futuristic-btn {
-  position: relative;
-  display: inline-block;
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: linear-gradient(145deg, #7b5cff, #b86bff);
-  box-shadow: 0 0 15px #7b5cff, 0 0 30px #b86bff, 0 0 60px #b86bff;
-  transition: 0.3s;
-  overflow: hidden;
-}
-
-.futuristic-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #7b5cff, 0 0 50px #b86bff, 0 0 100px #b86bff;
-}
-
-.futuristic-btn::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-  transform: rotate(45deg);
-  transition: all 0.5s;
-}
-
-.futuristic-btn:hover::before {
-  transform: rotate(45deg) translate(20%, 20%);
-}
-</style>
-
-        </section>
-
-        <!-- Main Content with Parallax Effect -->
-        <main class="container mx-auto px-4 py-8 relative z-10 parallax-effect">
-            <!-- Featured Apps Section -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-semibold mb-6 glow-text">Featured Apps</h2>
-                <!-- Categories Section -->
-                <div class="mb-8 flex flex-wrap justify-center space-x-2 md:space-x-4">
-                    <button class="card-futuristic p-3 rounded-lg text-center font-medium category-button active" onclick="filterApps('all')">All Apps</button>
-                    <button class="card-futuristic p-3 rounded-lg text-center font-medium category-button" onclick="filterApps('Games')">Games</button>
-                    <button class="card-futuristic p-3 rounded-lg text-center font-medium category-button" onclick="filterApps('Productivity')">Productivity</button>
-                    <button class="card-futuristic p-3 rounded-lg text-center font-medium category-button" onclick="filterApps('Utilities')">Utilities</button>
-                    <button class="card-futuristic p-3 rounded-lg text-center font-medium category-button" onclick="filterApps('Customization')">Customization</button>
-                    <button class="card-futuristic p-3 rounded-lg text-center font-medium category-button" onclick="filterApps('Multimedia')">Multimedia</button>
-                    <button class="card-futuristic p-3 rounded-lg text-center font-medium category-button" onclick="filterApps('Social')">Social</button>
-                    <button class="card-futuristic p-3 rounded-lg text-center font-medium category-button" onclick="filterApps('Others')">Others</button>
-                </div>
-                
-                <div class="bg-[#161b22] rounded-xl p-6 border border-[#30363d]">
-                    <!-- Table Header -->
-                    <div class="grid grid-cols-2 gap-4 mb-4 font-bold text-white uppercase text-sm border-b pb-2 border-[#30363d]">
-                        <span>Nombre</span>
-                        <span class="text-center">Descarga</span>
-                    </div>
-                    <!-- App List Container -->
-                    <div id="app-list" class="space-y-4">
-                        <!-- Aplicaciones existentes -->
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Summon_1.8_Satella" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-check-square-offset text-xl text-yellow-400"></i>
-                                <span class="font-medium">Summon_1.8_Satella</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Summon_1.8_Satella.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Vinegar_2.4.2" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-video-camera text-xl text-blue-400"></i>
-                                <span class="font-medium">Vinegar_2.4.2</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Vinegar_2.4.2.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="HeadsUp_5.1.41_Satella" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-user-circle text-xl text-green-400"></i>
-                                <span class="font-medium">HeadsUp_5.1.41_Satella</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/HeadsUp_5.1.41_Satella.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Pandolife1.1a_2211.1" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-activity text-xl text-orange-400"></i>
-                                <span class="font-medium">Pandolife1.1a_2211.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Pandolife1.1a_2211.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="StarVPN_3.6.0" data-category="Others">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-shield text-xl text-purple-400"></i>
-                                <span class="font-medium">StarVPN_3.6.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/StarVPN_3.6.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="RadarbotVIP_8.7.1" data-category="Others">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-map-pin text-xl text-red-400"></i>
-                                <span class="font-medium">RadarbotVIP_8.7.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/RadarbotVIP_8.7.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="VidList_0.5.1" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-list text-xl text-blue-400"></i>
-                                <span class="font-medium">VidList_0.5.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/VidList_0.5.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Climax" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-note text-xl text-gray-400"></i>
-                                <span class="font-medium">Climax</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Climax.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="ChromaHue_2.1.0" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-palette text-xl text-yellow-400"></i>
-                                <span class="font-medium">ChromaHue_2.1.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/ChromaHue_2.1.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Ulysses_27.3k" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-text-aa text-xl text-blue-400"></i>
-                                <span class="font-medium">Ulysses_27.3k</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Ulysses_27.3k.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="PostBox-Pocket" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-envelope text-xl text-indigo-400"></i>
-                                <span class="font-medium">PostBox-Pocket</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/PostBox-Pocket.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="SuperMario64_60FPS_1.2.1" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-game-controller text-xl text-red-400"></i>
-                                <span class="font-medium">SuperMario64_60FPS_1.2.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/SuperMario64_60FPS_1.2.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="SuperMario64_30FPS_1.2.1" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-game-controller text-xl text-red-400"></i>
-                                <span class="font-medium">SuperMario64_30FPS_1.2.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/SuperMario64_30FPS_1.2.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="SuperMario64" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-game-controller text-xl text-red-400"></i>
-                                <span class="font-medium">SuperMario64</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/SuperMario64.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="FRLegends++" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-car text-xl text-gray-400"></i>
-                                <span class="font-medium">FRLegends++</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/FRLegends++.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="WallpapersCentralPro_1.5.2" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-image-square text-xl text-orange-400"></i>
-                                <span class="font-medium">WallpapersCentralPro_1.5.2</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/WallpapersCentralPro_1.5.2.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="LiveWallpapersForMe_2.42.2" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-film-slate text-xl text-teal-400"></i>
-                                <span class="font-medium">LiveWallpapersForMe_2.42.2</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/LiveWallpapersForMe_2.42.2.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="YouCamPerfect_5.76.1" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-camera text-xl text-pink-400"></i>
-                                <span class="font-medium">YouCamPerfect_5.76.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/YouCamPerfect_5.76.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Star_Map_2.6_Satella" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-star text-xl text-blue-400"></i>
-                                <span class="font-medium">Star_Map_2.6_Satella</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Star_Map_2.6_Satella.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="RefacePro_3.12.0" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-face-mask text-xl text-yellow-400"></i>
-                                <span class="font-medium">RefacePro_3.12.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/RefacePro_3.12.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="AppCake+" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-app-window text-xl text-green-400"></i>
-                                <span class="font-medium">AppCake+</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/AppCake+.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="NewOS" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-device-mobile text-xl text-cyan-400"></i>
-                                <span class="font-medium">NewOS</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/NewOS.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="AddRepo" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-link-simple text-xl text-orange-400"></i>
-                                <span class="font-medium">AddRepo</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/AddRepo.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Root" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-folder-open text-xl text-red-600"></i>
-                                <span class="font-medium">Root</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Root.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="SleepCycle_Premium" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-moon text-xl text-purple-400"></i>
-                                <span class="font-medium">SleepCycle_Premium</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/SleepCycle_Premium.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Alarmy_6.68.0+Satella" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-alarm text-xl text-red-400"></i>
-                                <span class="font-medium">Alarmy_6.68.0+Satella</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Alarmy_6.68.0+Satella.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Adobe_Express_11.3.0+Satella" data-category="Productivity Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-paint-brush-broad text-xl text-yellow-400"></i>
-                                <span class="font-medium">Adobe_Express_11.3.0+Satella</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Adobe_Express_11.3.0+Satella.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Pixelmator2.7.3" data-category="Productivity Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-image text-xl text-blue-400"></i>
-                                <span class="font-medium">Pixelmator2.7.3</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Pixelmator2.7.3.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="FineReader_PDF_Pro_15.4.2" data-category="Productivity Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-file-pdf text-xl text-red-400"></i>
-                                <span class="font-medium">FineReader_PDF_Pro_15.4.2</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/FineReader_PDF_Pro_15.4.2.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="VideoShow_5.7.5" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-film-slate text-xl text-purple-400"></i>
-                                <span class="font-medium">VideoShow_5.7.5</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/VideoShow_5.7.5.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="iTablaPro_11.6.1" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-microphone text-xl text-teal-400"></i>
-                                <span class="font-medium">iTablaPro_11.6.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/iTablaPro_11.6.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="HdoPlay-1-0-2-JKCrack" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-monitor-play text-xl text-pink-400"></i>
-                                <span class="font-medium">HdoPlay-1-0-2-JKCrack</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/HdoPlay-1-0-2-JKCrack.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Santander" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-bank text-xl text-gray-400"></i>
-                                <span class="font-medium">Santander</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Santander.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Candy_Crush" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-game-controller text-xl text-red-400"></i>
-                                <span class="font-medium">Candy_Crush</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Candy_Crush.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Wallcraft_Pro_2.8" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-paint-brush text-xl text-orange-400"></i>
-                                <span class="font-medium">Wallcraft_Pro_2.8</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Wallcraft_Pro_2.8.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Jaility" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-lock-key text-xl text-red-600"></i>
-                                <span class="font-medium">Jaility</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Jaility.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="PostBox-0.8-beta" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-mailbox text-xl text-indigo-400"></i>
-                                <span class="font-medium">PostBox-0.8-beta</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/PostBox-0.8-beta.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="kok3shidoll_v2.2.1" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-gear text-xl text-gray-400"></i>
-                                <span class="font-medium">kok3shidoll_v2.2.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/kok3shidoll_v2.2.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Sync.ME_VIP_11.17.3" data-category="Social Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-user-switch text-xl text-green-400"></i>
-                                <span class="font-medium">Sync.ME_VIP_11.17.3</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Sync.ME_VIP_11.17.3.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="VivaVideo_VIP_9.3.6" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-film-slate-simple text-xl text-purple-400"></i>
-                                <span class="font-medium">VivaVideo_VIP_9.3.6</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/VivaVideo_VIP_9.3.6.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="ClarityWallpaperPro7.2.6" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-palette text-xl text-teal-400"></i>
-                                <span class="font-medium">ClarityWallpaperPro7.2.6</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/ClarityWallpaperPro7.2.6.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="DualgramPro_1.22" data-category="Social Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-camera text-xl text-cyan-400"></i>
-                                <span class="font-medium">DualgramPro_1.22</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/DualgramPro_1.22.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="remoteMousePro_4.211" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-mouse text-xl text-gray-400"></i>
-                                <span class="font-medium">remoteMousePro_4.211</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/remoteMousePro_4.211.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Dystopia_0.01" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-sword text-xl text-gray-500"></i>
-                                <span class="font-medium">Dystopia_0.01</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Dystopia_0.01.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Retro_0.2~88" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-monitor text-xl text-purple-400"></i>
-                                <span class="font-medium">Retro_0.2~88</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Retro_0.2~88.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="ScreenshotX1.0" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-camera-slash text-xl text-red-400"></i>
-                                <span class="font-medium">ScreenshotX1.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/ScreenshotX1.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="ScreenSaver++1.3.1" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-monitor-arrows text-xl text-blue-400"></i>
-                                <span class="font-medium">ScreenSaver++1.3.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/ScreenSaver++1.3.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="OldOS_1.0.18" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-device-mobile text-xl text-gray-400"></i>
-                                <span class="font-medium">OldOS_1.0.18</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/OldOS_1.0.18.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Provenance2.1" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-game-controller text-xl text-red-400"></i>
-                                <span class="font-medium">Provenance2.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Provenance2.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Nuevas Aplicaciones -->
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="CyPwn_Store" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-download-simple text-xl text-blue-400"></i>
-                                <span class="font-medium">CyPwn_Store</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/CyPwn_Store.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="YTMusicUltimate_v1.4.1_YTM6.03.1" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-music-notes-plus text-xl text-red-400"></i>
-                                <span class="font-medium">YTMusicUltimate_v1.4.1_YTM6.03.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/YTMusicUltimate_v1.4.1_YTM6.03.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="RaceControlF1" data-category="Others">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-flag-checkered text-xl text-orange-400"></i>
-                                <span class="font-medium">RaceControlF1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/RaceControlF1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="AppDB_1.1.5" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-database text-xl text-green-400"></i>
-                                <span class="font-medium">AppDB_1.1.5</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/AppDB_1.1.5.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="PeriodicTablePRO_1.124" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-atom text-xl text-cyan-400"></i>
-                                <span class="font-medium">PeriodicTablePRO_1.124</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/PeriodicTablePRO_1.124.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Whitelist" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-list-checks text-xl text-teal-400"></i>
-                                <span class="font-medium">Whitelist</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Whitelist.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="DramaFlix_1.1.0" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-popcorn text-xl text-pink-400"></i>
-                                <span class="font-medium">DramaFlix_1.1.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/DramaFlix_1.1.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Cowabunga10" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-sparkle text-xl text-yellow-400"></i>
-                                <span class="font-medium">Cowabunga10</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Cowabunga10.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Dead_Cells_plus_v3.2.2" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-skull text-xl text-red-600"></i>
-                                <span class="font-medium">Dead_Cells_plus_v3.2.2</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Dead_Cells_plus_v3.2.2.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="PicsArtGold_21.8.6" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-magic-wand text-xl text-purple-400"></i>
-                                <span class="font-medium">PicsArtGold_21.8.6</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/PicsArtGold_21.8.6.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="PelletDodge" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-circle-dashed text-xl text-gray-400"></i>
-                                <span class="font-medium">PelletDodge</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/PelletDodge.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="FacebookNoAds_401.0" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-facebook-logo text-xl text-blue-500"></i>
-                                <span class="font-medium">FacebookNoAds_401.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/FacebookNoAds_401.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="DarkCloud_6.16.1" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-cloud text-xl text-blue-300"></i>
-                                <span class="font-medium">DarkCloud_6.16.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/DarkCloud_6.16.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="WDBFontOverwrite" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-text-bolder text-xl text-indigo-400"></i>
-                                <span class="font-medium">WDBFontOverwrite</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/WDBFontOverwrite.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="KillMyOTA-1.1" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-warning-octagon text-xl text-yellow-500"></i>
-                                <span class="font-medium">KillMyOTA-1.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/KillMyOTA-1.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="FilzaEscaped16" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-file-arrow-up text-xl text-green-500"></i>
-                                <span class="font-medium">FilzaEscaped16</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/FilzaEscaped16.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="SantanderEscaped-0.3" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-money text-xl text-red-600"></i>
-                                <span class="font-medium">SantanderEscaped-0.3</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/SantanderEscaped-0.3.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="BeReal_0.31.0" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-camera-rotate text-xl text-purple-400"></i>
-                                <span class="font-medium">BeReal_0.31.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/BeReal_0.31.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Ally_2.0.23" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-handshake text-xl text-blue-400"></i>
-                                <span class="font-medium">Ally_2.0.23</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Ally_2.0.23.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Keka_1.0.1" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-archive text-xl text-gray-500"></i>
-                                <span class="font-medium">Keka_1.0.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Keka_1.0.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="McClockface.1.5.1" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-timer text-xl text-green-400"></i>
-                                <span class="font-medium">McClockface.1.5.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/McClockface.1.5.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Naiad" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-water text-xl text-blue-500"></i>
-                                <span class="font-medium">Naiad</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Naiad.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="SharkMessenger_388.0" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-shark text-xl text-gray-600"></i>
-                                <span class="font-medium">SharkMessenger_388.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/SharkMessenger_388.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Sonic_3.5" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-running text-xl text-blue-600"></i>
-                                <span class="font-medium">Sonic_3.5</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Sonic_3.5.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Dystopia" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-sword text-xl text-gray-500"></i>
-                                <span class="font-medium">Dystopia</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Dystopia.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Regram_1.0-b10_351.0.1" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-instagram-logo text-xl text-purple-600"></i>
-                                <span class="font-medium">Regram_1.0-b10_351.0.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Regram_1.0-b10_351.0.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="DuolingoMax_7.37.1" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-brain text-xl text-lime-400"></i>
-                                <span class="font-medium">DuolingoMax_7.37.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/DuolingoMax_7.37.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Regram_1.0-b10_347.2.5" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-instagram-logo text-xl text-purple-600"></i>
-                                <span class="font-medium">Regram_1.0-b10_347.2.5</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Regram_1.0-b10_347.2.5.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="EeveeSpotify-4.9-8.9.68" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-music-note text-xl text-green-500"></i>
-                                <span class="font-medium">EeveeSpotify-4.9-8.9.68</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/EeveeSpotify-4.9-8.9.68.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Alook_Browser_20.1" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-globe-hemisphere-west text-xl text-blue-500"></i>
-                                <span class="font-medium">Alook_Browser_20.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Alook_Browser_20.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="WallcraftPro_3.19" data-category="Customization">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-paint-brush text-xl text-orange-400"></i>
-                                <span class="font-medium">WallcraftPro_3.19</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/WallcraftPro_3.19.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Phantom_VPN_3.9.6_PhantomReset" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-lock-key text-xl text-red-600"></i>
-                                <span class="font-medium">Phantom_VPN_3.9.6_PhantomReset</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Phantom_VPN_3.9.6_PhantomReset.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="VlogNow_1.82.1_Cracked" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-video text-xl text-teal-400"></i>
-                                <span class="font-medium">VlogNow_1.82.1_Cracked</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/VlogNow_1.82.1_Cracked.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Picsart_25.5.1_Cracked" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-image-square text-xl text-purple-400"></i>
-                                <span class="font-medium">Picsart_25.5.1_Cracked</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Picsart_25.5.1_Cracked.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="CapCut_12.0_Cracked" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-scissors text-xl text-yellow-500"></i>
-                                <span class="font-medium">CapCut_12.0_Cracked</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/CapCut_12.0_Cracked.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Regram_1.0-b8_343.0.0" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-instagram-logo text-xl text-purple-600"></i>
-                                <span class="font-medium">Regram_1.0-b8_343.0.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Regram_1.0-b8_343.0.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Picsart_25.4.2_Premium" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-image-square text-xl text-purple-400"></i>
-                                <span class="font-medium">Picsart_25.4.2_Premium</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Picsart_25.4.2_Premium.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="HelloWeatherVIP_3.13.6" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-cloud-lightning text-xl text-gray-500"></i>
-                                <span class="font-medium">HelloWeatherVIP_3.13.6</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/HelloWeatherVIP_3.13.6.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="VidList_1.2" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-list text-xl text-blue-400"></i>
-                                <span class="font-medium">VidList_1.2</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/VidList_1.2.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="AIChatSmithPremium-7.0.0" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-robot text-xl text-cyan-400"></i>
-                                <span class="font-medium">AIChatSmithPremium-7.0.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/AIChatSmithPremium-7.0.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="ESign_5.0_noLogs_V1.1" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-signature text-xl text-yellow-400"></i>
-                                <span class="font-medium">ESign_5.0_noLogs_V1.1</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/ESign_5.0_noLogs_V1.1.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Haaretz_Heb_Unlocked" data-category="Others">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-newspaper text-xl text-orange-500"></i>
-                                <span class="font-medium">Haaretz_Heb_Unlocked</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Haaretz_Heb_Unlocked.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Haaretz_Eng_Unlocked" data-category="Others">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-newspaper text-xl text-orange-500"></i>
-                                <span class="font-medium">Haaretz_Eng_Unlocked</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Haaretz_Eng_Unlocked.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="TheMarker_Heb_Unlocked" data-category="Others">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-chart-line text-xl text-green-500"></i>
-                                <span class="font-medium">TheMarker_Heb_Unlocked</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/TheMarker_Heb_Unlocked.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Spark_3.9.12" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-envelope text-xl text-indigo-400"></i>
-                                <span class="font-medium">Spark_3.9.12</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Spark_3.9.12.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="callrecorder" data-category="Utilities">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-phone-call text-xl text-teal-400"></i>
-                                <span class="font-medium">callrecorder</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/callrecorder.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="Spark_3.9.11" data-category="Productivity">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-envelope text-xl text-indigo-400"></i>
-                                <span class="font-medium">Spark_3.9.11</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/Spark_3.9.11.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="IGRocketRegram_1.0-b7_338.0.0" data-category="Social">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-instagram-logo text-xl text-purple-600"></i>
-                                <span class="font-medium">IGRocketRegram_1.0-b7_338.0.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/IGRocketRegram_1.0-b7_338.0.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="trailforks_hacked" data-category="Games">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-map-pin-line text-xl text-lime-400"></i>
-                                <span class="font-medium">trailforks_hacked</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/trailforks_hacked.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 items-center app-row" data-name="BazaartPremium_10.3.0" data-category="Multimedia">
-                            <div class="flex items-center space-x-2">
-                                <i class="ph-fill ph-scissors text-xl text-yellow-500"></i>
-                                <span class="font-medium">BazaartPremium_10.3.0</span>
-                            </div>
-                            <div class="flex justify-center">
-                                <a href="https://ipa.cypwn.xyz/ipas/BazaartPremium_10.3.0.ipa" class="w-full p-2 rounded-lg button-futuristic text-xs text-center">
-                                    Download .IPA
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
     </div>
-
-    <!-- ABOUT US PAGE -->
-<div id="about-us-page" class="page">
-    <main class="container mx-auto px-4 py-8 relative z-10 parallax-effect">
-        <section>
-            <h2 class="text-3xl font-semibold mb-6 glow-text">About Us 📖</h2>
-            <div class="card-futuristic p-6 rounded-xl space-y-4 text-[#8b949e] text-lg">
-
-                <p>
-                    Hey! I’m <strong>guzesqdro</strong> — the mind behind this project.<br>
-                    After <strong>4 months</strong> of non-stop planning, testing, and hacking, I launched this platform to bring together everything I’ve learned, built, and tweaked — all in one place. 🚀
-                </p>
-
-                <p>
-                    <strong>💡 What’s the goal?</strong><br>
-                    To create a real tech community, where knowledge is shared freely and curiosity is the driving force.<br>
-                    I believe that everyone should have access to powerful tools, apps, and ideas — no paywalls, no BS.
-                </p>
-
-                <p>
-                    <strong>🔧 What do I do?</strong><br>
-                    A bit of everything, for everyone:
-                    <ul class="list-disc list-inside mt-2">
-                        <li>📱 Modded <strong>iOS apps (.ipa)</strong></li>
-                        <li>🤖 Tweaked <strong>Android apps</strong></li>
-                        <li>🍏 Custom <strong>macOS software</strong></li>
-                        <li>💻 Unlocked <strong>Windows tools</strong></li>
-                        <li>📦 A full repo for <strong>Sileo, Zebra, and Cydia</strong></li>
-                    </ul>
-                    <br>
-                    Everything here is tested, clean, and <strong>free of ads</strong>. 🧼
-                </p>
-
-                <p>
-                    <strong>🧠 Why?</strong><br>
-                    Because I love learning, breaking things, fixing them better — and helping others skip the struggle.<br>
-                    If you're into tech, mods, and open-source vibes, you're in the right place. 🤝
-                </p>
-
-                <p>
-                    <strong>⚠️ Important</strong><br>
-                    All content is shared <strong>for educational purposes only</strong>.<br>
-                    I do not support illegal use of any software or content.
-                </p>
-
-                <p>
-                    Want something added or missing a specific app?<br>
-                    📲 DM me on Instagram: <a href="https://instagram.com/guzesqdro" class="text-blue-400 underline">@guzesqdro</a>
-                </p>
-
-                <p>
-                    Let’s build something awesome together.<br>
-                    <strong>– guzesqdro</strong> 💻🧪
-                </p>
-
-            </div>
-        </section>
-    </main>
-</div>
-
-        <!-- REPO PAGE -->
-    <div id="repo-page" class="page">
-        <main class="container mx-auto px-4 py-8 relative z-10 parallax-effect">
-            <section>
-                <h2 class="text-3xl font-semibold mb-6 glow-text">Our repository 📦</h2>
-                <div class="card-futuristic p-6 rounded-xl">
-                    <p class="text-lg text-[#8b949e]">
-                       Hey! Do you want our repository? Select your package and it will install automaticly!
-                    </p>
-                     <div class="card-futuristic p-6 rounded-xl">
-                    <p class="text-lg text-[#8b949e]">
-                       But if you want manually: https://guzesqdro.github.io
-                    </p>
-                </div>
-               <!-- Cydia Button -->
-<a class="futuristic-btn" href="cydia://url/https://guzesqdro.github.io" target="_blank">Cydia</a>
-
-<!-- Zebra Button -->
-<a class="futuristic-btn" href="zebra://sources/add/https://guzesqdro.github.io" target="_blank">Zebra</a>
-
-<!-- Sileo Button -->
-<a class="futuristic-btn" href="sileo://source/https://guzesqdro.github.io" target="_blank">Sileo</a>
-
-<style>
-.futuristic-btn {
-  position: relative;
-  display: inline-block;
-  padding: 15px 30px;
-  margin: 10px;
-  border-radius: 50px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: linear-gradient(145deg, #7b5cff, #b86bff);
-  box-shadow: 0 0 15px #7b5cff, 0 0 30px #b86bff, 0 0 60px #b86bff;
-  transition: 0.3s;
-  overflow: hidden;
-}
-
-.futuristic-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #7b5cff, 0 0 50px #b86bff, 0 0 100px #b86bff;
-}
-
-.futuristic-btn::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-  transform: rotate(45deg);
-  transition: all 0.5s;
-}
-
-.futuristic-btn:hover::before {
-  transform: rotate(45deg) translate(20%, 20%);
-}
-</style>
-
-            </section>
-        </main>
-    </div>
-
-
-    <!-- INSTALATION PAGE -->
-<div id="instalation-page" class="page">
-  <main class="container mx-auto px-4 py-8 relative z-10 parallax-effect">
-    <section>
-      <h2 class="text-3xl font-semibold mb-6 glow-text">Instalation 📲</h2>
-
-      <!-- Cubo 1 -->
-      <div class="card-futuristic p-6 rounded-xl mb-4">
-        <p class="text-lg text-[#8b949e]">
-          <strong>NON-JAILBREAK (1: Method)</strong><br>
-          1: Download Sideloady from sideloadly.io<br>
-          2: Download our apps<br>
-          3: Connect your device via USB to your computer<br>
-          4: Drop the .ipa into SideLoady and select Apple ID<br>
-          5: Put your Apple ID (Email) and password and the verification code<br>
-          6: Enjoy!
-        </p>
-      </div>
-
-      <!-- Cubo 2 -->
-      <div class="card-futuristic p-6 rounded-xl mb-4">
-        <p class="text-lg text-[#8b949e]">
-          <strong>NON-JAILBREAK (2: Method)</strong><br>
-          1: Go to <a href="https://ios.cfw.guide/installing-trollstore" class="text-blue-400 underline">this site</a> and see if your device is supported<br>
-          2: If it is, install the appropriate version<br>
-          3: Install TrollStore and install the .ipa<br>
-          4: Enjoy!
-        </p>
-      </div>
-
-      <!-- Cubo 3 -->
-      <div class="card-futuristic p-6 rounded-xl">
-        <p class="text-lg text-[#8b949e]">
-          <strong>JAILBREAK</strong><br>
-          1: Go to Sileo, Zebra or Cydia and add our repo: https://guzesqdro.github.io/<br>
-          2: Install AppSync and respring<br>
-          3: Do the same as NON-JAILBREAK but don't put Apple ID, use AdHoc<br>
-          4: Enjoy!
-        </p>
-      </div>
-    </section>
-  </main>
-</div>
-
-
     <script>
-        // JavaScript para el efecto parallax
-        document.addEventListener('scroll', function() {
-            const main = document.querySelector('.parallax-effect');
-            if (main) {
-                let scrollY = window.scrollY;
-                main.style.transform = `perspective(1000px) translateY(${scrollY * 0.1}px) translateZ(0)`;
+        // Create floating emojis
+        function createFloatingEmojis() {
+            const emojis = ['✨', '🥳', '💫', '🚀', '💻', '📱', '🌐', '🎨', '🧪', '📡', '💥', '🔮', '🤖', '👾', '🕹️'];
+            const container = document.body;
+            for (let i = 0; i < 15; i++) {
+                const emoji = document.createElement('div');
+                emoji.className = 'floating-emoji';
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = `${Math.random() * 100}vw`;
+                emoji.style.top = `${Math.random() * 100}vh`;
+                emoji.style.fontSize = `${Math.random() * 20 + 15}px`;
+                emoji.style.animationDelay = `${Math.random() * 6}s`;
+                container.appendChild(emoji);
             }
-        });
-
-        // JavaScript para la funcionalidad de búsqueda
-        const searchInput = document.getElementById('search-input');
-        const appRows = document.querySelectorAll('.app-row');
-        
-        searchInput.addEventListener('input', function(event) {
-            const searchTerm = event.target.value.toLowerCase();
-            appRows.forEach(row => {
-                const appName = row.dataset.name.toLowerCase();
-                const appCategory = row.dataset.category.toLowerCase();
-                if (appName.includes(searchTerm) || appCategory.includes(searchTerm)) {
-                    row.style.display = 'grid'; // Muestra la fila
+        }
+        // Search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingEmojis();
+            const searchIcon = document.querySelector('.search-icon');
+            const searchInput = document.querySelector('.search-input');
+            
+            // Ensure the search input is properly positioned
+            searchIcon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                searchInput.classList.toggle('active');
+                if (searchInput.classList.contains('active')) {
+                    searchInput.focus();
                 } else {
-                    row.style.display = 'none'; // Oculta la fila
+                    searchInput.value = '';
                 }
             });
+            
+            // Close search when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!searchIcon.contains(e.target) && !searchInput.contains(e.target)) {
+                    searchInput.classList.remove('active');
+                    searchInput.value = '';
+                }
+            });
+            
+            // Prevent clicks on search input from closing it
+            searchInput.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            // Close search when pressing Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    searchInput.classList.remove('active');
+                    searchInput.value = '';
+                }
+            });
+            
+            // Animation sequence
+            setTimeout(() => {
+                document.querySelector('.loading-container').style.opacity = '0';
+                setTimeout(() => {
+                    document.querySelector('.loading-container').style.display = 'none';
+                    document.querySelector('.container').classList.add('show');
+                    // Animate sections when they come into view
+                    const sections = document.querySelectorAll('section');
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    sections.forEach(section => {
+                        observer.observe(section);
+                    });
+                }, 500);
+            }, 3000);
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('.nav-item').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const contentElement = document.querySelector('.content');
+                    if (targetElement && contentElement) {
+                        contentElement.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! 🎉 I will get back to you soon. 📬');
+                this.reset();
+            });
         });
-
-        // JavaScript para la funcionalidad de filtrado por categoría
-        function filterApps(category) {
-            // Eliminar la clase 'active' de todos los botones de categoría
-            document.querySelectorAll('.category-button').forEach(button => {
-                button.classList.remove('active');
-            });
-
-            // Ocultar todas las filas de aplicaciones
-            appRows.forEach(row => {
-                row.style.display = 'none';
-            });
-
-            // Mostrar solo las aplicaciones de la categoría seleccionada
-            if (category === 'all') {
-                appRows.forEach(row => {
-                    row.style.display = 'grid';
-                });
-                document.querySelector('[onclick="filterApps(\'all\')"]').classList.add('active');
-            } else {
-                document.querySelectorAll(`[data-category*="${category}"]`).forEach(row => {
-                    row.style.display = 'grid';
-                });
-                document.querySelector(`[onclick="filterApps('${category}')"]`).classList.add('active');
-            }
-        }
-
-        // JavaScript para cambiar de página
-        function showPage(pageId) {
-            // Oculta todas las páginas
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            // Muestra solo la página deseada
-            document.getElementById(pageId).classList.add('active');
-        }
     </script>
 </body>
 </html>
