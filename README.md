@@ -5,7 +5,7 @@
 [![Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.com/invite/h5YfEjbuqJ)  
 
 ---
-
+# WE CHANGED DOMAIN! [NEW WEBSITE](https://guzesqdro.netilfy.app)
 👨‍💻 On my GitHub (👉 [guzesqdro.github.io](https://guzesqdro.github.io)) you’ll find:  
 - 📱 An Archive for **old repositories** of Cydia, Zebra and Sileo!
 - 🍏 My own apps for Mac that **every user needs!**
